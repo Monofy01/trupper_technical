@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "a9606f5b-01e2-4d6b-be88-98d53fbd6090",
+		"name": "TRUPPER",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25917594"
+	},
+	"item": [
+		{
+			"name": "00_LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"brian01\",\n    \"password\": \"administrator\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "01_CREATE_LISTA_COMPRAS",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9QUk9EVUNUIn0seyJhdXRob3JpdHkiOiJSRUFEX0FMTF9QUk9EVUNUUyJ9LHsiYXV0aG9yaXR5IjoiQ1JFQVRFX0xJU1RBX0NPTVBSQVMifSx7ImF1dGhvcml0eSI6IkdFVF9MSVNUQV9DT01QUkFTIn0seyJhdXRob3JpdHkiOiJVUERBVEVfTElTVEFfQ09NUFJBUyJ9LHsiYXV0aG9yaXR5IjoiREVMRVRFX0xJU1RBX0NPTVBSQVMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6ImJyaWFuIiwic3ViIjoiYnJpYW4wMSIsImlhdCI6MTcwNDc5NDI5MiwiZXhwIjoxNzA0Nzk2MDkyfQ.aj3Vp166blIPTespo_Xg3JX22m7TU44pVnm-lleHIt8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"cliente\": 720010,\n        \"nombre\": \"Lista Mensual\",\n        \"detalles\": [\n            {\n                \"idProducto\": 18156,\n                \"cantidad\": 5\n            }\n        ]\n    },\n    {\n        \"cliente\": 710020,\n        \"nombre\": \"Lista Semanal\",\n        \"detalles\": [\n            {\n                \"idProducto\": 10200,\n                \"cantidad\": 5\n            },\n            {\n                \"idProducto\": 25020,\n                \"cantidad\": 6\n            },\n            {\n                \"idProducto\": 10170,\n                \"cantidad\": 1\n            }\n        ]\n    },\n    {\n        \"cliente\": 710020,\n        \"nombre\": \"Lista Anual\",\n        \"detalles\": [\n            {\n                \"idProducto\": 10280,\n                \"cantidad\": 2\n            },\n            {\n                \"idProducto\": 30001,\n                \"cantidad\": 3\n            },\n            {\n                \"idProducto\": 10200,\n                \"cantidad\": 7\n            },\n            {\n                \"idProducto\": 25020,\n                \"cantidad\": 2\n            },\n            {\n                \"idProducto\": 10170,\n                \"cantidad\": 9\n            }\n        ]\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/store/guardar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"store",
+						"guardar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02_GET_ALL_LISTAS_COMPRAS",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9QUk9EVUNUIn0seyJhdXRob3JpdHkiOiJSRUFEX0FMTF9QUk9EVUNUUyJ9LHsiYXV0aG9yaXR5IjoiQ1JFQVRFX0xJU1RBX0NPTVBSQVMifSx7ImF1dGhvcml0eSI6IkdFVF9MSVNUQV9DT01QUkFTIn0seyJhdXRob3JpdHkiOiJVUERBVEVfTElTVEFfQ09NUFJBUyJ9LHsiYXV0aG9yaXR5IjoiREVMRVRFX0xJU1RBX0NPTVBSQVMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6ImJyaWFuIiwic3ViIjoiYnJpYW4wMSIsImlhdCI6MTcwNDc5NDI5MiwiZXhwIjoxNzA0Nzk2MDkyfQ.aj3Vp166blIPTespo_Xg3JX22m7TU44pVnm-lleHIt8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/store/obtener-lista/720010",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"store",
+						"obtener-lista",
+						"720010"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03_UPDATE_LISTA_COMPRAS",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9QUk9EVUNUIn0seyJhdXRob3JpdHkiOiJSRUFEX0FMTF9QUk9EVUNUUyJ9LHsiYXV0aG9yaXR5IjoiQ1JFQVRFX0xJU1RBX0NPTVBSQVMifSx7ImF1dGhvcml0eSI6IkdFVF9MSVNUQV9DT01QUkFTIn0seyJhdXRob3JpdHkiOiJVUERBVEVfTElTVEFfQ09NUFJBUyJ9LHsiYXV0aG9yaXR5IjoiREVMRVRFX0xJU1RBX0NPTVBSQVMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6ImJyaWFuIiwic3ViIjoiYnJpYW4wMSIsImlhdCI6MTcwNDc5NDI5MiwiZXhwIjoxNzA0Nzk2MDkyfQ.aj3Vp166blIPTespo_Xg3JX22m7TU44pVnm-lleHIt8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cliente\": 720010,\n    \"nombre\": \"Lista Actualizada\",\n    \"detalles\": [\n        {\n            \"idProducto\": 25020,\n            \"cantidad\": 2\n        },\n        {\n            \"idProducto\": 10170,\n            \"cantidad\": 9\n        },\n        {\n            \"idProducto\": 18156,\n            \"cantidad\": 10\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/store/actualizar-lista/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"store",
+						"actualizar-lista",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "04_DELETE_LISTA_COMPRAS",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9QUk9EVUNUIn0seyJhdXRob3JpdHkiOiJSRUFEX0FMTF9QUk9EVUNUUyJ9LHsiYXV0aG9yaXR5IjoiQ1JFQVRFX0xJU1RBX0NPTVBSQVMifSx7ImF1dGhvcml0eSI6IkdFVF9MSVNUQV9DT01QUkFTIn0seyJhdXRob3JpdHkiOiJVUERBVEVfTElTVEFfQ09NUFJBUyJ9LHsiYXV0aG9yaXR5IjoiREVMRVRFX0xJU1RBX0NPTVBSQVMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6ImJyaWFuIiwic3ViIjoiYnJpYW4wMSIsImlhdCI6MTcwNDc5NDI5MiwiZXhwIjoxNzA0Nzk2MDkyfQ.aj3Vp166blIPTespo_Xg3JX22m7TU44pVnm-lleHIt8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cliente\": 720010,\n    \"nombre\": \"Lista Actualizada\",\n    \"detalles\": [\n        {\n            \"idProducto\": 25020,\n            \"cantidad\": 2\n        },\n        {\n            \"idProducto\": 10170,\n            \"cantidad\": 9\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/store/borrar-lista/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"store",
+						"borrar-lista",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
